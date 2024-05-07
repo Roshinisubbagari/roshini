@@ -2,7 +2,7 @@
 
 1.INSTALL FOLLOWING PACKAGES
 
-```csv,PIL
+```csv,PIL```
 
 2.CODE
 ```bash
