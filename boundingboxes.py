@@ -3,9 +3,9 @@ import csv
 from PIL import Image, ImageDraw
 
 # Define paths for CSV file, image directory, and output directory
-csv_file = "/home/vaishnavi-moutam/Downloads/7622202030987_bounding_box.csv"
-image_dir = "/home/vaishnavi-moutam/Downloads/7622202030987"
-output_dir = "/home/vaishnavi-moutam/Downloads/7622202030987_with_boxes"
+csv_file = "/home/roshini-subbagari/Downloads/7622202030987_bounding_box.csv"
+image_dir = "/home/roshini-subbagari/Downloads/7622202030987"
+output_dir = "/home/roshini-subbagari/Downloads/7622202030987_with_boxes"
 
 # Create output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
