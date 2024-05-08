@@ -13,7 +13,9 @@ Image Processing
 Machine Learning 
 
 Data Analysis
+
 ## Program 
+
 1. Import libraries
 
 import numpy as np
@@ -21,6 +23,7 @@ import numpy as np
 import cv2 as cv
 
 from matplotlib import pyplot as plt
+
  2.Reads an image from the specified file path using.
  
 img = cv.imread('/home/roshini-subbagari/Desktop/archana/lily.jpeg')
@@ -78,8 +81,6 @@ from PIL import Image, ImageDraw
 
 2. Read the paths
 
-# Define paths for CSV file, image directory, and output directory
-
 csv_file = "/home/roshini-subbagari/Downloads/7622202030987_bounding_box.csv"
 
 image_dir = "/home/roshini-subbagari/Downloads/7622202030987"
@@ -97,9 +98,7 @@ def draw_boxes(image, boxes):
     draw = ImageDraw.Draw(image)
     
     for box in boxes:
-    
-        # Extract box coordinates
-        
+            
         left = int(box['left'])
         
         top = int(box['top'])
@@ -158,8 +157,8 @@ with open(csv_file, 'r') as file:
         
         full_image_with_boxes.save(os.path.join(output_dir, f"full_{image_name}"))
 
-        ## Input 
-        
+## Input
+
 ![7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/Roshinisubbagari/roshini/assets/169050913/ed1fc0f6-cbd6-4f8c-8205-97acbdd3de78) 
 
 
@@ -194,7 +193,7 @@ Next enter in to for loop iterates each element i in list num
 
     Finally it update the previous variable to be equal to the current num i before the next iteration
 
-    ## Output
+## Output
 
     Current Number 0Previous Number 0is 0
     
