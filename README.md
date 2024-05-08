@@ -217,6 +217,40 @@ Current Number 8Previous Number 7is 15
 Current Number 9Previous Number 8is 17
 
 
+## Webcam
+
+A webcam is a digital camera designed for capturing video or images in real-time and streaming them to a computer or over the internet. Webcams are widely used for video conferencing, live streaming, security monitoring, and capturing images for various purpose
+
+1.import library 
+
+import cv2
+
+2.This creates a VideoCapture object (vid) to capture video from the default webcam
+
+vid = cv2.VideoCapture(0) 
+  
+while(True): 
+    3.Captures a frame from video its shows two values, a boolean indicating whether the frame was successfully captured.
+frame is the captured frame, stored as an image 
+ 
+   ret, frame = vid.read() 
+   
+   4. The imshow() function displays the captured frame in a window named 'frame'
+    
+    cv2.imshow('frame', frame) 
+    
+   5.the loop breaks  waits for a key press waitKey(1).If the 'q' key is pressed the loop breaks.
+   
+    if cv2.waitKey(1) & 0xFF == ord('q'): 
+        break
+     6.The video releases the VideoCapture object, freeing the resources
+vid.release() 
+
+cv2.destroyAllWindows() 
+
+
+## Output
+
 
 
 
