@@ -251,7 +251,7 @@ cv2.destroyAllWindows()
 
 ## Output
 
-
+[Screencast from 08-05-24 03:20:39 PM IST.webm](https://github.com/Roshinisubbagari/roshini/assets/169050913/bc238f58-a034-49c7-b2c9-81d567efc521)
 
 
     
