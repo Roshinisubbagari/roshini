@@ -163,6 +163,9 @@ with open(csv_file, 'r') as file:
 ![7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/Roshinisubbagari/roshini/assets/169050913/ed1fc0f6-cbd6-4f8c-8205-97acbdd3de78) 
 
 
+## Output
+
+![full_7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/Roshinisubbagari/roshini/assets/169050913/2940e249-0848-4b6c-bbf0-bf3d6c1dfaf4) 
 
 
 
