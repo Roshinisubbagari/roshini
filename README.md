@@ -159,8 +159,14 @@ with open(csv_file, 'r') as file:
         full_image_with_boxes.save(os.path.join(output_dir, f"full_{image_name}"))
 
         ## Input 
-
         
+![7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/Roshinisubbagari/roshini/assets/169050913/ed1fc0f6-cbd6-4f8c-8205-97acbdd3de78) 
+
+
+
+
+
+
 
         
 
