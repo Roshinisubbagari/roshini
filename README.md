@@ -168,6 +168,61 @@ with open(csv_file, 'r') as file:
 ![full_7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/Roshinisubbagari/roshini/assets/169050913/2940e249-0848-4b6c-bbf0-bf3d6c1dfaf4) 
 
 
+## Iteration
+
+Here is the program explain the printing of first 10 numbers and in each ieration ,printing the sum of current and privious values
+
+ num = list(range(10))
+ it create a list called num containing from 0 to 9 and using range
+ 
+previousNum = 0
+
+Then ,variable previous num is 0
+
+for i in num:
+
+Next enter in to for loop iterates each element i in list num
+
+    sum = previousNum + i
+
+    It calculate the sum of current num and previous num store it i
+    
+    
+    print('Current Number '+ str(i) + 'Previous Number ' + str(previousNum) + 'is ' + str(sum)) # <- This is the issue.
+    
+    previousNum=i 
+
+    Finally it update the previous variable to be equal to the current num i before the next iteration
+
+    ## Output
+
+    Current Number 0Previous Number 0is 0
+    
+Current Number 1Previous Number 0is 1
+
+Current Number 2Previous Number 1is 3
+
+Current Number 3Previous Number 2is 5
+
+Current Number 4Previous Number 3is 7
+
+Current Number 5Previous Number 4is 9
+
+Current Number 6Previous Number 5is 11
+
+Current Number 7Previous Number 6is 13
+
+Current Number 8Previous Number 7is 15
+
+Current Number 9Previous Number 8is 17
+
+
+
+
+
+    
+
+
 
 
 
