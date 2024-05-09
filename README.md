@@ -89,13 +89,13 @@ pil - python imaging library and its original library
 
 3. Directory Creation
 
-     os.makedirs(output_dir, exist_ok=True)
+           os.makedirs(output_dir, exist_ok=True)
 
 4. Specifying the draw_boxes, and crop the image functions.
 
-            def draw_boxes(image, boxes):
+           def draw_boxes(image, boxes):
 
-          draw = ImageDraw.Draw(image)
+           draw = ImageDraw.Draw(image)
     
     for box in boxes:
             
@@ -110,7 +110,7 @@ pil - python imaging library and its original library
         draw.rectangle([left, top, right, bottom], outline="blue")
     return image
 
-   def crop_image(image, boxes):
+          def crop_image(image, boxes):
 
         cropped_images = []
     
