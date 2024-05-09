@@ -18,36 +18,36 @@ Data Analysis
 
 1. Import libraries
 
-import numpy as np
+     import numpy as np
 
-import cv2 as cv
+     import cv2 as cv
 
-from matplotlib import pyplot as plt
+     from matplotlib import pyplot as plt
 
- 2.Reads an image from the specified file path using.
+2.Reads an image from the specified file path using.
  
-img = cv.imread('/home/roshini-subbagari/Desktop/archana/lily.jpeg')
+     img = cv.imread('/home/roshini-subbagari/Desktop/archana/lily.jpeg')
 
 3.The image is loaded, it saves a copy of the image to a new file path using.
 
-cv.imwrite("/home/roshini-subbagari/Desktop/archana/lil.jpeg",img)
+     cv.imwrite("/home/roshini-subbagari/Desktop/archana/lil.jpeg",img)
 
-assert img is not None, "file could not be read, check with os.path.exists()"
-color = ('b','g','r')
+     assert img is not None, "file could not be read, check with os.path.exists()"
+     color = ('b','g','r')
 
-for i,col in enumerate(color):
+     for i,col in enumerate(color):
 
 4.Calculates the histogram of the image for the current color channel.
 
- histr = cv.calcHist([img],[i],None,[256],[0,256])
+     histr = cv.calcHist([img],[i],None,[256],[0,256])
  
- plt.plot(histr,color = col)
+     plt.plot(histr,color = col)
  
- plt.xlim([0,256])
+     plt.xlim([0,256])
 
  5.This function displays the plot showing the color histograms for the blue, green, and red channels.
  
-plt.show()
+     plt.show()
 
 ## Input
 
@@ -73,78 +73,74 @@ pil - python imaging library and its original library
 
 1. Import libraries
 
-import os
+    import os
 
-import csv
+    import csv
 
-from PIL import Image, ImageDraw
+    from PIL import Image, ImageDraw
 
 2. Read the paths
 
-csv_file = "/home/roshini-subbagari/Downloads/7622202030987_bounding_box.csv"
+    csv_file = "/home/roshini-subbagari/Downloads/7622202030987_bounding_box.csv"
 
-image_dir = "/home/roshini-subbagari/Downloads/7622202030987"
+    image_dir = "/home/roshini-subbagari/Downloads/7622202030987"
 
-output_dir = "/home/roshini-subbagari/Downloads/7622202030987_with_boxes"
+    output_dir = "/home/roshini-subbagari/Downloads/7622202030987_with_boxes"
 
 3. Directory Creation
 
-os.makedirs(output_dir, exist_ok=True)
+     os.makedirs(output_dir, exist_ok=True)
 
 4. Specifying the draw_boxes, and crop the image functions.
 
-def draw_boxes(image, boxes):
+     def draw_boxes(image, boxes):
 
-    draw = ImageDraw.Draw(image)
+     draw = ImageDraw.Draw(image)
     
     for box in boxes:
             
-        left = int(box['left'])
+          left = int(box['left'])
         
-        top = int(box['top'])
+          top = int(box['top'])
         
-        right = int(box['right'])
+          right = int(box['right'])
         
-        bottom = int(box['bottom'])
-        
-        # Draw rectangle on image
-        
+          bottom = int(box['bottom'])
+                
         draw.rectangle([left, top, right, bottom], outline="blue")
     return image
 
-def crop_image(image, boxes):
+   def crop_image(image, boxes):
 
-    cropped_images = []
+        cropped_images = []
     
-    for box in boxes:
-        # Extract box coordinates
+       for box in boxes:
         left = int(box['left'])
         top = int(box['top'])
         right = int(box['right'])
         bottom = int(box['bottom'])
-        # Crop image based on box coordinates
         cropped_img = image.crop((left, top, right, bottom))
         cropped_images.append(cropped_img)
     return cropped_images
 
 5. processing csv file
    
-with open(csv_file, 'r') as file:
+      with open(csv_file, 'r') as file:
 
-    csv_reader = csv.DictReader(file)
+         csv_reader = csv.DictReader(file)
     
-    for row in csv_reader:
+          for row in csv_reader:
     
         
-        image_name = row['filename']
+          image_name = row['filename']
         
-        image_path = os.path.join(image_dir, image_name)
+          image_path = os.path.join(image_dir, image_name)
         
-        output_path = os.path.join(output_dir, image_name)
+          output_path = os.path.join(output_dir, image_name)
        
-        image = Image.open(image_path)
+           image = Image.open(image_path)
         
-        boxes = [{'left': row['xmin'], 'top': row['ymin'], 'right': row['xmax'], 'bottom': row['ymax']}]
+          boxes = [{'left': row['xmin'], 'top': row['ymin'], 'right': row['xmax'], 'bottom': row['ymax']}]
         
         
         cropped_images = crop_image(image, boxes)
@@ -171,49 +167,50 @@ with open(csv_file, 'r') as file:
 
 Here is the program explain the printing of first 10 numbers and in each ieration ,printing the sum of current and privious values
 
- num = list(range(10))
- it create a list called num containing from 0 to 9 and using range
+     num = list(range(10))
  
-previousNum = 0
+ 1.It create a list called num containing from 0 to 9 and using range
+ 
+     previousNum = 0
 
-Then ,variable previous num is 0
+     Then ,variable previous num is 0
 
-for i in num:
+     for i in num:
 
-Next enter in to for loop iterates each element i in list num
+2.Next enter in to for loop iterates each element i in list num
 
-    sum = previousNum + i
+     sum = previousNum + i
 
-    It calculate the sum of current num and previous num store it i
+3.It calculate the sum of current num and previous num store it i
     
     
-    print('Current Number '+ str(i) + 'Previous Number ' + str(previousNum) + 'is ' + str(sum)) # <- This is the issue.
+       print('Current Number '+ str(i) + 'Previous Number ' + str(previousNum) + 'is ' + str(sum)) # <- This is the issue.
     
-    previousNum=i 
+         previousNum=i 
 
-    Finally it update the previous variable to be equal to the current num i before the next iteration
+  Finally it update the previous variable to be equal to the current num i before the next iteration
 
 ## Output
 
     Current Number 0Previous Number 0is 0
     
-Current Number 1Previous Number 0is 1
+    Current Number 1Previous Number 0is 1
 
-Current Number 2Previous Number 1is 3
+    Current Number 2Previous Number 1is 3
 
-Current Number 3Previous Number 2is 5
+    Current Number 3Previous Number 2is 5
 
-Current Number 4Previous Number 3is 7
+    Current Number 4Previous Number 3is 7
 
-Current Number 5Previous Number 4is 9
+    Current Number 5Previous Number 4is 9
 
-Current Number 6Previous Number 5is 11
+    Current Number 6Previous Number 5is 11
 
-Current Number 7Previous Number 6is 13
+    Current Number 7Previous Number 6is 13
 
-Current Number 8Previous Number 7is 15
+    Current Number 8Previous Number 7is 15
 
-Current Number 9Previous Number 8is 17
+    Current Number 9Previous Number 8is 17
 
 
 ## Webcam
@@ -222,60 +219,60 @@ A webcam is a digital camera designed for capturing video or images in real-time
 
 1.import library 
 
-import cv2
+      import cv2
 
 2.This creates a VideoCapture object (vid) to capture video from the default webcam
 
-vid = cv2.VideoCapture(0) 
+      vid = cv2.VideoCapture(0) 
 
 3.the camera is open and ready to use. If not, print an error message. 
 
-if (video.isOpened() == False):  
-    print("Error reading video file") 
+           if (video.isOpened() == False):  
+               print("Error reading video file") 
     
 4. The frame width,height from the camera and convert it to an integer.
 
-  frame_width = int(video.get(3)) 
-  frame_height = int(video.get(4)) 
+        frame_width = int(video.get(3)) 
+        frame_height = int(video.get(4)) 
 
 5.The size of the output using the video frame width and height.
 
-size = (frame_width, frame_height) 
+        size = (frame_width, frame_height) 
 
 6.The codec is set to 'MJPG' (Motion JPEG), the frame rate is set to 10 frames per second, and the size is set using the width and height.
   
-result = cv2.VideoWriter('a.avi',  
+        result = cv2.VideoWriter('a.avi',  
                          cv2.VideoWriter_fourcc(*'MJPG'), 
                          10, size) 
                          
  7.Here, the frame is read successfully from the camera.Display the frame is named 'Frame' to the video file.if the key pressed is 's' the loop is break.
                     
     
-while(True): 
+       while(True): 
 
-    ret, frame = video.read() 
+            ret, frame = video.read() 
   
-    if ret == True:  
+         if ret == True:  
   
-        result.write(frame) 
+               result.write(frame) 
         
-        cv2.imshow('Frame', frame) 
+                cv2.imshow('Frame', frame) 
   
-        if cv2.waitKey(1) & 0xFF == ord('s'): 
-            break
-  8. The frame was not read successfully,break the loop.
+                if cv2.waitKey(1) & 0xFF == ord('s'): 
+                break
+ 8. The frame was not read successfully,break the loop.
 
     else: 
         break
         
-  9.The video capture and writer objects are released.
+ 9.The video capture and writer objects are released.
   
-video.release() 
-result.release() 
+        video.release() 
+        result.release() 
     
-cv2.destroyAllWindows() 
+        cv2.destroyAllWindows() 
    
-print("The video was successfully saved")
+        print("The video was successfully saved")
 
 
 
