@@ -227,25 +227,55 @@ import cv2
 2.This creates a VideoCapture object (vid) to capture video from the default webcam
 
 vid = cv2.VideoCapture(0) 
-  
-while(True): 
-    3.Captures a frame from video its shows two values, a boolean indicating whether the frame was successfully captured.
-frame is the captured frame, stored as an image 
- 
-   ret, frame = vid.read() 
-   
-   4. The imshow() function displays the captured frame in a window named 'frame'
-    
-    cv2.imshow('frame', frame) 
-    
-   5.the loop breaks  waits for a key press waitKey(1).If the 'q' key is pressed the loop breaks.
-   
-    if cv2.waitKey(1) & 0xFF == ord('q'): 
-        break
-     6.The video releases the VideoCapture object, freeing the resources
-vid.release() 
 
+3.the camera is open and ready to use. If not, print an error message. 
+
+if (video.isOpened() == False):  
+    print("Error reading video file") 
+4. The frame width,height from the camera and convert it to an integer.
+
+frame_width = int(video.get(3)) 
+frame_height = int(video.get(4)) 
+
+5.The size of the output using the video frame width and height.
+
+size = (frame_width, frame_height) 
+
+   
+result = cv2.VideoWriter('a.avi',  
+                         cv2.VideoWriter_fourcc(*'MJPG'), 
+                         10, size) 
+    
+while(True): 
+    ret, frame = video.read() 
+  
+    if ret == True:  
+  
+        # Write the frame into the 
+        # file 'filename.avi' 
+        result.write(frame) 
+        cv2.imshow('Frame', frame) 
+  
+        # Press S on keyboard  
+        # to stop the process 
+        if cv2.waitKey(1) & 0xFF == ord('s'): 
+            break
+  
+    # Break the loop 
+    else: 
+        break
+  
+# When everything done, release  
+# the video capture and video  
+# write objects 
+video.release() 
+result.release() 
+    
+# Closes all the frames 
 cv2.destroyAllWindows() 
+   
+print("The video was successfully saved")
+
 
 
 ## Output
