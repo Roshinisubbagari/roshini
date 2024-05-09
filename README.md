@@ -18,11 +18,11 @@ Data Analysis
 
 1. Import libraries
 
-     import numpy as np
+          import numpy as np
 
-     import cv2 as cv
+          import cv2 as cv
 
-     from matplotlib import pyplot as plt
+          from matplotlib import pyplot as plt
 
 2.Reads an image from the specified file path using.
  
@@ -93,9 +93,9 @@ pil - python imaging library and its original library
 
 4. Specifying the draw_boxes, and crop the image functions.
 
-     def draw_boxes(image, boxes):
+        def draw_boxes(image, boxes):
 
-     draw = ImageDraw.Draw(image)
+        draw = ImageDraw.Draw(image)
     
     for box in boxes:
             
@@ -125,22 +125,22 @@ pil - python imaging library and its original library
 
 5. processing csv file
    
-      with open(csv_file, 'r') as file:
+           with open(csv_file, 'r') as file:
 
-         csv_reader = csv.DictReader(file)
+              csv_reader = csv.DictReader(file)
     
-          for row in csv_reader:
+               for row in csv_reader:
     
         
-          image_name = row['filename']
+               image_name = row['filename']
         
-          image_path = os.path.join(image_dir, image_name)
+              image_path = os.path.join(image_dir, image_name)
         
-          output_path = os.path.join(output_dir, image_name)
+             output_path = os.path.join(output_dir, image_name)
        
-           image = Image.open(image_path)
+             image = Image.open(image_path)
         
-          boxes = [{'left': row['xmin'], 'top': row['ymin'], 'right': row['xmax'], 'bottom': row['ymax']}]
+            boxes = [{'left': row['xmin'], 'top': row['ymin'], 'right': row['xmax'], 'bottom': row['ymax']}]
         
         
         cropped_images = crop_image(image, boxes)
@@ -248,22 +248,23 @@ A webcam is a digital camera designed for capturing video or images in real-time
  7.Here, the frame is read successfully from the camera.Display the frame is named 'Frame' to the video file.if the key pressed is 's' the loop is break.
                     
     
-       while(True): 
+          while(True): 
 
-            ret, frame = video.read() 
+               ret, frame = video.read() 
   
-         if ret == True:  
+            if ret == True:  
   
                result.write(frame) 
         
                 cv2.imshow('Frame', frame) 
   
-                if cv2.waitKey(1) & 0xFF == ord('s'): 
-                break
+                  if cv2.waitKey(1) & 0xFF == ord('s'): 
+                  break
+                  
  8. The frame was not read successfully,break the loop.
 
-    else: 
-        break
+             else: 
+                  break
         
  9.The video capture and writer objects are released.
   
