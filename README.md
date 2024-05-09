@@ -250,6 +250,7 @@ cv2.destroyAllWindows()
 
 ## Output
 
+https://github.com/Roshinisubbagari/roshini/assets/169050913/4b8e90a0-363d-40c2-8c31-f8ab2f4fd646
 
 
 
