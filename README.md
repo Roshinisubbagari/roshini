@@ -73,19 +73,19 @@ pil - python imaging library and its original library
 
 1. Import libraries
 
-    import os
+        import os
 
-    import csv
+        import csv
 
-    from PIL import Image, ImageDraw
+        from PIL import Image, ImageDraw
 
 2. Read the paths
 
-    csv_file = "/home/roshini-subbagari/Downloads/7622202030987_bounding_box.csv"
+         csv_file = "/home/roshini-subbagari/Downloads/7622202030987_bounding_box.csv"
 
-    image_dir = "/home/roshini-subbagari/Downloads/7622202030987"
+         image_dir = "/home/roshini-subbagari/Downloads/7622202030987"
 
-    output_dir = "/home/roshini-subbagari/Downloads/7622202030987_with_boxes"
+         output_dir = "/home/roshini-subbagari/Downloads/7622202030987_with_boxes"
 
 3. Directory Creation
 
@@ -93,9 +93,9 @@ pil - python imaging library and its original library
 
 4. Specifying the draw_boxes, and crop the image functions.
 
-        def draw_boxes(image, boxes):
+            def draw_boxes(image, boxes):
 
-        draw = ImageDraw.Draw(image)
+          draw = ImageDraw.Draw(image)
     
     for box in boxes:
             
@@ -125,16 +125,16 @@ pil - python imaging library and its original library
 
 5. processing csv file
    
-           with open(csv_file, 'r') as file:
+              with open(csv_file, 'r') as file:
 
-              csv_reader = csv.DictReader(file)
+                    csv_reader = csv.DictReader(file)
     
-               for row in csv_reader:
+                    for row in csv_reader:
     
         
-               image_name = row['filename']
+                  image_name = row['filename']
         
-              image_path = os.path.join(image_dir, image_name)
+                image_path = os.path.join(image_dir, image_name)
         
              output_path = os.path.join(output_dir, image_name)
        
