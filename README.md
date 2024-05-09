@@ -232,46 +232,47 @@ vid = cv2.VideoCapture(0)
 
 if (video.isOpened() == False):  
     print("Error reading video file") 
+    
 4. The frame width,height from the camera and convert it to an integer.
 
-frame_width = int(video.get(3)) 
-frame_height = int(video.get(4)) 
+  frame_width = int(video.get(3)) 
+  frame_height = int(video.get(4)) 
 
 5.The size of the output using the video frame width and height.
 
 size = (frame_width, frame_height) 
 
-   
+6.The codec is set to 'MJPG' (Motion JPEG), the frame rate is set to 10 frames per second, and the size is set using the width and height.
+  
 result = cv2.VideoWriter('a.avi',  
                          cv2.VideoWriter_fourcc(*'MJPG'), 
                          10, size) 
+                         
+ 7.Here, the frame is read successfully from the camera.Display the frame is named 'Frame' to the video file.if the key pressed is 's' the loop is break.
+                    
     
 while(True): 
+
     ret, frame = video.read() 
   
     if ret == True:  
   
-        # Write the frame into the 
-        # file 'filename.avi' 
         result.write(frame) 
+        
         cv2.imshow('Frame', frame) 
   
-        # Press S on keyboard  
-        # to stop the process 
         if cv2.waitKey(1) & 0xFF == ord('s'): 
             break
-  
-    # Break the loop 
+  8. The frame was not read successfully,break the loop.
+
     else: 
         break
+        
+  9.The video capture and writer objects are released.
   
-# When everything done, release  
-# the video capture and video  
-# write objects 
 video.release() 
 result.release() 
     
-# Closes all the frames 
 cv2.destroyAllWindows() 
    
 print("The video was successfully saved")
