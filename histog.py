@@ -18,3 +18,5 @@ for i,col in enumerate(color):
  plt.plot(histr,color = col)
  plt.xlim([0,256])
 plt.show()
+
+
